@@ -117,6 +117,7 @@ Write like this:
 - Unsanitized input leads to SQL Injection
 - Authentication mechanisms can be broken easily
 - Burp Suite is effective for request manipulation
+  
 🛡️ 10. Prevention
 
 This part is very important for interviews
